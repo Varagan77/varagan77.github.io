@@ -1,4 +1,65 @@
+:root { 
+	--c1: #d9dad7; 
+	--c2: #c24d2c; 
+	--c3: #3e4a61; 
+	--c4: #1a2639; 
+    
+    
+}
+
+.dark-mode{
+    --cd1: #004a06;
+    --cd2: #016c0a;
+    --cd3: #303030;
+    --cd4: #000000;
+    background-color: var(--cd4);
+    border-color: var(--cd1);
+    color: var(--cd2);
+}
+
 body {
-    background-color: black;
-    color: green
+    background-color: var(--c3);
+    color: var(--c2);
+    font-family: 'TheGoodMonolith', sans-serif;
+    border: solid;
+    border-width: 2px;
+    border-color: var(--c1);
+}
+
+button{
+    display: flex;
+    text-align: left;
+   margin: 10px;
+    font-size: 60%;
+}
+
+.user-logo{
+    display: flex;
+    text-align: left;
+   margin: 10px;
+    font-size: 60%;
+}
+
+.header-profile{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border: solid;
+    border-width: 2px;
+    border-color: var(--c1);
+}
+
+.name{
+    display: flex;
+    text-align: left;
+   margin: 10px;
+}
+.link-group , .about-me , .projects , .logs{
+    padding: 10px;
+    margin: 10px;
+    border: solid;
+    border-width: 2px;
+    border-color: var(--c1);
+    display: inline-block;
+    text-align: center;
 }

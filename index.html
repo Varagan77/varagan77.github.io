@@ -1,174 +1,67 @@
-<!--
-  In the past, the DOCTYPE was needed to specify HTML versions.
-  As of HTML5, providing `html` is sufficient.
 
-  It is somewhere between a proper HTML tag, and an HTML comment.
--->
 <!DOCTYPE html>
-<!-- Add the appropriate language for your site -->
 <html lang="en">
 <head>
-  <!-- This title shows up in the page's tab, next to the favicon -->
-  <title>Your Page Title</title>
-
-  <!--
-    UTF-8 is a character set including many universal characters.
-    This is an essential tag for all websites, to avoid seeing
-    weird boxes like ▢▢▢
-  -->
+  <title>Varagan77-Portfolio</title>
   <meta charset="utf-8">
-
-  <!--
-    This critical tag ensures that items on the screen scale
-    correctly on mobile devices. Without this tag, content may
-    appear VERY tiny.
-  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!--
-    Set your name and a brief description.
-    Used by search engines.
-  -->
-  <meta name="author" content="Your name">
-  <meta name="description" content="Brief description">
-
-  <!--
-    `og` stands for Open Graph, which is a protocol for how your
-    website appears when linked to from another site. These tags
-    are critical to ensuring your site gains an appropriate card
-    when sharing on social media.
-  -->
-  <meta property="og:title" content="Your Page Title">
-  <meta property="og:description" content="Brief description">
+  <meta name="author" content="Johannes W.">
+  <meta name="description" content="My portfolio">
+  <meta property="og:title" content="Varagan77 - Portoflio">
+  <meta property="og:description" content="My portfolio">
   <meta property="og:image" content="/some-image.png">
   <meta property="og:url" content="/this-page.html">
   <meta property="og:site_name" content="Your Site Name">
-
-  <!--
-    `twitter` is similar to Open Graph, but specific to Twitter.
-    There are multiple card types you can choose from.
-
-    Learn more on Twitter's documentation:
-    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started
-  -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image:alt" content="Image description">
-
-  <!-- Include one or more CSS files -->
   <link href="style.css" rel="stylesheet">
-
-  <!--
-    A favicon is the small picture that shows up in the browser's
-    tab. Historically, these used a proprietary ".ico" format, and
-    you needed to provide many different sizes.
-
-    Happily, you can now provide a single vector graphic in SVG
-    format. It will scale to any size, and still look crisp.
-  -->
+  <link href="https://fonts.cdnfonts.com/css/thegoodmonolith" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 
 <body>
-  <h1>Main Heading (h1)</h1>
-  <h2>Subheading (h2)</h2>
-  <h3>Sub-subheading (h3)</h3>
-  <h4>Section Title (h4)</h4>
-  <h5>Minor Heading (h5)</h5>
-  <h6>Smallest Heading (h6)</h6>
-  
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non risus in orci consectetur sollicitudin.</p>
-  
-  <a href="#">This is a link</a>
-  
-  <img src="https://via.placeholder.com/150" alt="Placeholder Image">
-  
-  <ul>
-    <li>Unordered list item 1</li>
-    <li>Unordered list item 2</li>
-    <li>Unordered list item 3</li>
-  </ul>
-  
-  <ol>
-    <li>Ordered list item 1</li>
-    <li>Ordered list item 2</li>
-    <li>Ordered list item 3</li>
-  </ol>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Heading 1</th>
-        <th>Heading 2</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-      </tr>
-      <tr>
-        <td>Data 3</td>
-        <td>Data 4</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <form>
-    <label for="text-input">Text Input:</label>
-    <input type="text" id="text-input" name="text-input"><br><br>
-  
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-  
-    <label for="textarea">Textarea:</label><br>
-    <textarea id="textarea" name="textarea" rows="4" cols="50">Lorem ipsum dolor sit amet...</textarea><br><br>
-  
-    <label for="select">Select:</label>
-    <select id="select" name="select">
-      <option value="one">Option 1</option>
-      <option value="two">Option 2</option>
-    </select><br><br>
-  
-    <input type="checkbox" id="checkbox1" name="checkbox1">
-    <label for="checkbox1">Checkbox</label><br>
-  
-    <input type="radio" id="radio1" name="radio" value="1">
-    <label for="radio1">Radio 1</label><br>
-  
-    <input type="radio" id="radio2" name="radio" value="2">
-    <label for="radio2">Radio 2</label><br><br>
-  
-    <input type="submit" value="Submit">
-  </form>
-  
-  <blockquote>
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  </blockquote>
-  
-  <code>console.log("Hello, world!");</code>
-  
-  <pre>
-  function greet() {
-    console.log("Hello, world!");
-  }
-  </pre>
-  
-  <small>This is small text.</small><br>
-  <strong>This is strong text.</strong><br>
-  <em>This is emphasized text.</em><br>
-  <mark>This text is highlighted.</mark><br>
-  <del>This text is deleted.</del><br>
-  <ins>This text is inserted.</ins><br>
-  <abbr title="HyperText Markup Language">HTML</abbr><br>
-  
-  <hr>
-  
-  <details>
-    <summary>Click to expand</summary>
-    <p>More lorem ipsum inside a details element.</p>
-  </details>
 
-  <!-- If necessary, include JS -->
+  <div class="header">
+   <p class="header-profile">github.com/Varagan77</p>
+  </div>
+  
+  <pre class="user-logo">
+    ▄               ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+   ▐░▌             ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+    ▐░▌           ▐░▌ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌     ▐░▌ ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌
+     ▐░▌         ▐░▌  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌       ▐░▌▐░▌▐░▌    ▐░▌         ▐░▌          ▐░▌ 
+      ▐░▌       ▐░▌   ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▌   ▐░▌        ▐░▌          ▐░▌  
+       ▐░▌     ▐░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌▐░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌       ▐░▌          ▐░▌   
+        ▐░▌   ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌ ▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▐░▌ ▐░▌      ▐░▌          ▐░▌    
+         ▐░▌ ▐░▌      ▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌    ▐░▌▐░▌     ▐░▌          ▐░▌     
+          ▐░▐░▌       ▐░▌       ▐░▌▐░▌      ▐░▌ ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌     ▐░▐░▌    ▐░▌          ▐░▌      
+           ▐░▌        ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌      ▐░░▌   ▐░▌          ▐░▌       
+            ▀          ▀         ▀  ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀        ▀▀     ▀            ▀        
+                                                                                                                              
+   </pre>
+ <h4>
+  <p class="name">Johannes Willem Kotze </p> 
+  <button id="theme-toggle">Switch to Dark Mode</button>
+  <div class="link-group">
+  <p class="line">------------------------</p>
+  <p class="link"></p>Resume  →  Download my resume...</p>
+  <p class="link"></p>Resume  →  Download my CV...</p>
+  <p class="link">GitHub  →  github.com/Varagan77</p> 
+  <p class="link">LinkedIn  →  linkedin/insert</p>
+  <p class="line">------------------------</p>
+</div>
+<div class="section-group">
+  <p class="about-me">About Me</p>
+  <p class="projects">Projects</p>
+  <p class="logs">Logs</p>
+</div>
+
+
+
+ </h4>
+
+
+
   <script src="main.js"></script>
 </body>
 </html>
