@@ -10,3 +10,5 @@ toggleInput.addEventListener('change', () => {
         body.classList.replace('dark-mode', 'light-mode');
     }
 });
+
+
