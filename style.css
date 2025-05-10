@@ -1,24 +1,42 @@
 :root { 
 	--c1: #d9dad7; 
-	--c2: #c24d2c; 
+	--c2: #9b3eff; 
 	--c3: #3e4a61; 
-	--c4: #1a2639; 
+	--c4: #1a26397d;
     
     
 }
 
+* {
+    transition: background-color 0.1s ease, 
+                color 0.1s ease, 
+                border-color 0.1s ease, 
+                background-image 0.1s ease !important;
+}
+
 .dark-mode{
-    --cd1: #004a06;
-    --cd2: #016c0a;
+    --cd1: #73000a;
+    --cd2: #b30000;
     --cd3: #303030;
     --cd4: #000000;
     background-color: var(--cd4);
     border-color: var(--cd1);
     color: var(--cd2);
+    background-image:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+                url(https://wallpapercave.com/wp/wp12699545.png) !important;
 }
 
 body {
     background-color: var(--c3);
+    background-image:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+                url(https://c4.wallpaperflare.com/wallpaper/26/399/594/1920x1081-px-1967-mustang-fastback-car-drive-neon-retrowave-synthwave-vehicle-art-skyline-hd-art-wallpaper-preview.jpg) !important;
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;  
+    margin: 0;                    
+    height: 100vh;   
     color: var(--c2);
     font-family: 'TheGoodMonolith', sans-serif;
     border: solid;
@@ -56,12 +74,18 @@ button{
     border: solid;
     border-width: 2px;
     border-color: var(--c1);
+   background-color: var(--c4);;
 }
 
 .name{
-    display: flex;
+    display: inline-block;
+    padding: 10px;
     text-align: left;
    margin: 10px;
+   border-width: 2px;
+    border-color: var(--c1) !important;
+   background-color: var(--c4);;
+    border: solid
 }
 
 @keyframes blink {
@@ -75,7 +99,7 @@ button{
   }
 
 
-.link-group , .about-me , .projects , .logs{
+.link-group , .about-me , .projects , .logs {
     padding: 10px;
     margin: 10px;
     border: solid;
@@ -83,6 +107,7 @@ button{
     border-color: var(--c1);
     display: inline-block;
     text-align: center;
+    background-color: var(--c4);k;
 }
 
 .theme-switch {
