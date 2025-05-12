@@ -24,14 +24,14 @@
     color: var(--cd2);
     background-image:
                 linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-                url(https://wallpapercave.com/wp/wp12699545.png) !important;
+                url(/darkmode_bg.jpg) !important;
 }
 
 body {
     background-color: var(--c3);
     background-image:
                 linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-                url(https://c4.wallpaperflare.com/wallpaper/26/399/594/1920x1081-px-1967-mustang-fastback-car-drive-neon-retrowave-synthwave-vehicle-art-skyline-hd-art-wallpaper-preview.jpg) !important;
+                url(/default_bg.jpg) !important;
     background-size: cover;
     background-position: center;  
     background-repeat: no-repeat;  
@@ -44,13 +44,20 @@ body {
     border-color: var(--c1);
 }
 
+
+
 .dark-mode body,
 .dark-mode .header-profile,
 .dark-mode .link-group,
 .dark-mode .about-me,
 .dark-mode .projects,
 .dark-mode .logs{
-	border-color: var(--cd1);
+	border-color: var(--cd1) !important;
+}
+
+.dark-mode .ball{
+  background: var(--cd2);
+
 }
 
 button{
@@ -87,6 +94,29 @@ button{
    background-color: var(--c4);;
     border: solid
 }
+.name {
+	display: inline-block;
+    padding: 10px;
+    text-align: left;
+   margin: 10px;
+   border-width: 2px;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	animation: 10s rotate linear infinite;
+  background-color: var(--c4);;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 
 @keyframes blink {
     50% {
@@ -107,13 +137,13 @@ button{
     border-color: var(--c1);
     display: inline-block;
     text-align: center;
-    background-color: var(--c4);k;
+    background-color: var(--c4);
 }
 
 .theme-switch {
     width: 60px; height: 30px; margin: 10px; position: relative;
     position: absolute;
-  top: 15px;
+  top: 8.5px;
   right: 10px;
   z-index: 1000;
   }
@@ -121,8 +151,7 @@ button{
     display: none;
   }
   .switch-label {
-    display: flex; justify-content: space-between; align-items: center;
-    background: var(--cd2); border-radius: 40px; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; border-radius: 40px; cursor: pointer;
     padding: 0 8px; height: 100%; position: relative;
   }
   .icon {
@@ -130,7 +159,7 @@ button{
   }
   .ball {
     position: absolute; top: 50%; left: 3px;
-    width: 24px; height: 24px; background: #fff;
+    width: 24px; height: 24px; background: var(--c2);
     border-radius: 50%; transform: translateY(-50%);
     transition: transform 0.3s ease;
     z-index: 1;
@@ -149,6 +178,7 @@ button{
   left: 1em;
   top: 1em;
   width: 5em;
+  display: none;
 }
 
 #console {
@@ -157,10 +187,11 @@ button{
   letter-spacing: 0.15em;
   line-height: 0.75em;
   margin: 0;
-  text-align: right;
-  align-items: ;
+  text-align: center;
   font-size: 5px;
-   right: 40%;
+  top: 0;
+  right: 0;
+   top: 50px;
 }
 
 .dark-mode #console {
