@@ -44,7 +44,17 @@ body {
     border-color: var(--c1);
 }
 
+a {
 
+  color: var(--c2);
+  text-decoration: none;
+}
+
+.dark-mode a {
+color: var(--cd2);
+  text-decoration: none;
+
+}
 
 .dark-mode body,
 .dark-mode .header-profile,
