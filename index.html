@@ -3,98 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Varagan77OS</title>
+  <title>Varagan77-Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- ════════════════════════════════════════════════════════════════════
-     VARAGAN77OS — CONFIGURATION BLOCK
-     Edit everything here. No need to touch anything below.
+     CONFIGBLOCK
+     Edit me
      ════════════════════════════════════════════════════════════════════ -->
 <script>
 const CONFIG = {
 
-  /* ── IDENTITY ─────────────────────────────────────────────────────── */
+  /* ── ID ─────────────────────────────────────────────────────── */
   name:         'Johannes Willem Kotze',
   alias:        'Varagan77',
-  role:         'Backend Developer',
+  role:         'Student',
   location:     'South Africa',
   github:       'https://github.com/Varagan77',
   githubHandle: 'github.com/Varagan77',
-  email:        'your@email.com',          // ← change me
+  email:        'johanneswillemkkotze@gmail.com',        
   os_version:   'v0.77',
 
-  /* ── ABOUT WINDOW — extra bio lines ──────────────────────────────── */
+  /* ── ABOUT──────────────────────────────── */
   about: {
-    specialty:  'Backend systems & APIs',
-    aesthetic:  'Retro terminal, orange matrix',
-    philosophy: 'Clean code, weird ideas',
+    specialty:  '-',
+    aesthetic:  '-',
+    philosophy: '-',
   },
 
-  /* ── SKILLS — add / remove categories and tags freely ────────────── */
+  /* ── SKILLS────────────── */
   skills: {
-    'BACKEND':         ['Node.js', 'Python', 'REST', 'APIs', 'SQL', 'PostgreSQL'],
+    'BACKEND':         ['C#', 'C++', 'Lua', 'Pyhton', 'SQL'],
     'FRONTEND':        ['HTML', 'CSS', 'JavaScript'],
     'DEVOPS & TOOLS':  ['Git', 'Linux', 'Terminal', 'Docker'],
     'SOFT SKILLS':     ['Problem solving', 'Self-directed', 'Backend-first thinking'],
   },
 
-  /* ── RESUME / CV — paste your hosted PDF URLs here ───────────────── */
-  resumeUrl: '',   // e.g. '/files/Resume_Varagan77.pdf'  or full https://...
-  cvUrl:     '',   // e.g. '/files/CV_Varagan77.pdf'
-
-  /* ── WEATHER — lat / lon + IANA timezone (uses open-meteo, free) ─── */
+  /* ── RESUME/CV ───────────────── */
+  resumeUrl: '',
+  cvUrl:     '',   
+  /* ── WEATHER─── */
   weather: {
     lat:      -26.2041,
     lon:       28.0473,
     timezone: 'Africa/Johannesburg',
-    city:     'Johannesburg, ZA',
+    city:     'Bloemfontein, ZA',
   },
 
   /* ── COLOUR PALETTE ──────────────────────────────────────────────── */
   colors: {
-    accent:      '#ff6a00',          // main orange
-    accentDim:   '#8a3800',          // muted orange — borders, dim text
-    bg:          '#080600',          // page background
-    bg2:         '#100c00',          // panel / window body bg
-    bg3:         '#181200',          // boot bar track
-    bg4:         '#1f1800',          // card / item bg
-    green:       '#39ff14',          // terminal green  (prompts, [OK])
-    textMuted:   '#7a5020',          // dim text
-    winBg:       'rgba(10,7,0,0.97)',// window background
+    accent:      '#ff6a00',          
+    accentDim:   '#8a3800',          
+    bg:          '#080600',         
+    bg2:         '#100c00',        
+    bg3:         '#181200',        
+    bg4:         '#1f1800',         
+    green:       '#39ff14',          
+    textMuted:   '#7a5020',         
+    winBg:       'rgba(10,7,0,0.97)',
   },
 
-  /* ── MATRIX RAIN ─────────────────────────────────────────────────── */
+  /* ── MATRIX─────────────────────────────────────────────────── */
   matrix: {
-    opacity:    0.13,    // canvas opacity   (0 = invisible, 1 = full)
-    speed:      200,     // ms per frame     — higher is SLOWER
-    fontSize:   13,      // px, also sets column width
-    fadeAlpha:  0.014,   // trail fade per frame — lower = longer ghost trails
-    brightFreq: 0.95,    // above this random threshold → white character
-    midFreq:    0.78,    // above this                  → mid-orange character
+    opacity:    0.20,    
+    speed:      200,     // ms per frame higher is slower
+    fontSize:   13,      
+    fadeAlpha:  0.014,  
+    brightFreq: 0.95,   
+    midFreq:    0.78,    
   },
 
   /* ── DONUT ───────────────────────────────────────────────────────── */
   donut: {
-    cols:       88,       // character columns (controls width)
-    rows:       60,       // character rows    (controls height)
+    cols:       88,       //width
+    rows:       60,       //height
     fontSize:   '5px',
     lineHeight: '0.82em',
-    opacity:    0.65,
-    speedA:     0.005,    // rotation rate around X axis — lower = slower
-    speedB:     0.0018,   // rotation rate around Z axis
+    opacity:    0.85,
+    speedA:     0.005,    //X speedd
+    speedB:     0.0018,   //Z speed
     chars:      '.:-=+#%@',
   },
 
   /* ── TASKBAR ─────────────────────────────────────────────────────── */
   taskbarHeight: '40px',
 
-  /* ── WIDGET PANEL (right-side) ───────────────────────────────────── */
+  /* ── RIGHT WIDGET PANEL───────────────────────────────────── */
   widgetWidth:   '162px',
-  widgetFadeOut: 0.12,   // opacity when not hovered (0 = invisible, 1 = full)
+  widgetFadeOut: 0.50,   //opacity 0 = invisible 1 = full
 
-  /* ── BOOT SEQUENCE — add / remove / edit freely ──────────────────── */
+  /* ── BOOT SEQUENCE──────────────────── */
   bootLines: [
     { t: 'VARAGAN77OS BIOS v0.77 — All rights reserved',   c: ''     },
     { t: 'CPU: Intel Core i9-13900K — 24 cores detected',  c: 'ok'   },
@@ -113,20 +112,18 @@ const CONFIG = {
 
 };
 </script>
-<!-- ═══════════════════════════════════════════════════ END CONFIG ════ -->
+<!-- ══════END CONFIG ════ -->
 
-
-<!-- ── Dynamic CSS variables (written from CONFIG by JS) ── -->
 <style id="dvars"></style>
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--font); background: var(--bg); }
 
-/* MATRIX */
+
 #matrix { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 
-/* BOOT */
+
 #boot {
   position: fixed; inset: 0; z-index: 999;
   background: var(--bg);
@@ -143,7 +140,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 #boot-fill  { height: 100%; width: 0; background: var(--or); transition: width 0.35s ease; border-radius: 1px; }
 #boot-sub   { font-size: 11px; color: var(--dim); margin-top: 6px; }
 
-/* TASKBAR */
+
 #taskbar {
   position: fixed; bottom: 0; left: 0; right: 0;
   height: var(--bar-h); z-index: 500;
@@ -171,13 +168,12 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 #tb-time  { font-size: 11px; color: var(--or2); }
 #tb-date  { font-size: 9px;  color: var(--dim); }
 
-/* DESKTOP */
 #desktop {
   position: fixed; inset: 0; bottom: var(--bar-h);
   z-index: 1; overflow: hidden;
 }
 
-/* DONUT — perfectly centred, no clipping */
+
 #donut-center {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
@@ -193,7 +189,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
   font-size: var(--donut-fs);
   line-height: var(--donut-lh);
 }
-/* pause button — sits below donut, subtle */
+
 #donut-ctrl {
   position: absolute; bottom: 10px; left: 50%;
   transform: translateX(-50%); z-index: 10;
@@ -206,7 +202,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 }
 #donut-btn:hover { border-color: var(--or); color: var(--or); }
 
-/* USERNAME BANNER */
+
 #username-banner {
   position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
   z-index: 10; pointer-events: none; white-space: nowrap;
@@ -228,7 +224,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
   97%             { transform: translateX(-50%); clip-path: none; color: var(--or); }
 }
 
-/* DESKTOP ICONS */
+
 #icons {
   position: absolute; top: 16px; left: 16px;
   display: flex; flex-direction: column; gap: 4px; z-index: 5;
@@ -244,7 +240,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 .icon .ico   { font-size: 26px; line-height: 1; }
 .icon .lbl   { font-size: 9px; color: #ffe8cc; text-align: center; text-shadow: 0 0 8px #000; word-break: break-word; }
 
-/* WIDGET PANEL — faded until hovered */
+
 #widgets {
   position: absolute; top: 16px; right: 16px;
   display: flex; flex-direction: column; gap: 12px;
@@ -270,7 +266,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 #w-city       { font-size: 9px;  color: var(--or2); margin-top: 2px; }
 #sysinfo      { font-size: 10px; color: var(--dim); line-height: 1.9; }
 
-/* WINDOWS */
+
 .win {
   position: absolute; display: none;
   background: var(--win-bg); border: 1px solid var(--or2);
@@ -301,7 +297,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 .win-body::-webkit-scrollbar-track { background: var(--bg2); }
 .win-body::-webkit-scrollbar-thumb { background: var(--or2); }
 
-/* Content helpers */
+
 .prompt    { color: var(--green); }
 .dim-t     { color: var(--dim); }
 .w-section { color: var(--green); font-size: 10px; letter-spacing: 1px; margin: 10px 0 4px; }
@@ -344,10 +340,10 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 <!-- ══ DESKTOP ═══════════════════════════════════════════════════════ -->
 <div id="desktop" style="display:none;">
 
-  <!-- Username banner -->
+
   <div id="username-banner"><span id="username-text"></span></div>
 
-  <!-- Centred spinning donut -->
+
   <div id="donut-center">
     <pre id="donut-pre"></pre>
   </div>
@@ -355,7 +351,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     <button id="donut-btn">⏸ PAUSE</button>
   </div>
 
-  <!-- Left desktop icons -->
+  
   <div id="icons">
     <div class="icon" onclick="openWin('w-about')">
       <div class="ico">👤</div><div class="lbl">about.exe</div>
@@ -374,7 +370,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     </div>
   </div>
 
-  <!-- Right widget panel (faded, reveals on hover) -->
+
   <div id="widgets">
     <div class="widget">
       <div class="widget-title">SYS_CLOCK</div>
@@ -397,7 +393,6 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     </div>
   </div>
 
-  <!-- ── WINDOW: ABOUT ── -->
   <div class="win" id="w-about" style="top:60px;left:110px;width:380px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-about')">
       <span>📄 about.exe</span>
@@ -410,7 +405,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     <div class="resize-br" onmousedown="resizeStart(event,'w-about')"></div>
   </div>
 
-  <!-- ── WINDOW: PROJECTS ── -->
+
   <div class="win" id="w-projects" style="top:50px;left:200px;width:440px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-projects')">
       <span>📁 projects.exe — [live GitHub]</span>
@@ -426,7 +421,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     <div class="resize-br" onmousedown="resizeStart(event,'w-projects')"></div>
   </div>
 
-  <!-- ── WINDOW: SKILLS ── -->
+ 
   <div class="win" id="w-skills" style="top:80px;left:160px;width:360px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-skills')">
       <span>⚙️ skills.exe</span>
@@ -439,7 +434,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     <div class="resize-br" onmousedown="resizeStart(event,'w-skills')"></div>
   </div>
 
-  <!-- ── WINDOW: RESUME ── -->
+  
   <div class="win" id="w-resume" style="top:70px;left:180px;width:400px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-resume')">
       <span>📄 resume.exe</span>
@@ -452,7 +447,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     <div class="resize-br" onmousedown="resizeStart(event,'w-resume')"></div>
   </div>
 
-  <!-- ── WINDOW: CONTACT ── -->
+  
   <div class="win" id="w-contact" style="top:90px;left:170px;width:360px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-contact')">
       <span>📡 contact.exe</span>
@@ -465,7 +460,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     <div class="resize-br" onmousedown="resizeStart(event,'w-contact')"></div>
   </div>
 
-</div><!-- /desktop -->
+</div>
 
 <!-- ══ TASKBAR ════════════════════════════════════════════════════════ -->
 <div id="taskbar">
@@ -483,7 +478,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 
 <!-- ══ SCRIPT ════════════════════════════════════════════════════════ -->
 <script>
-// ── 1. Apply CONFIG → CSS vars + static DOM stamps ───────────────────
+
 (function init() {
   const c = CONFIG.colors;
   document.getElementById('dvars').textContent = `
@@ -507,7 +502,6 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     }
   `;
 
-  // Static text stamps
   document.querySelectorAll('.j-alias').forEach(el => el.textContent = CONFIG.alias);
   document.getElementById('boot-ver').textContent = CONFIG.os_version;
   document.getElementById('si-alias').textContent = CONFIG.alias;
@@ -516,11 +510,11 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
   document.getElementById('tb-ghlink').href        = CONFIG.github;
   document.getElementById('tb-ghlink').textContent = CONFIG.githubHandle;
 
-  // Build window bodies
+
   buildAbout(); buildSkills(); buildResume(); buildContact();
 })();
 
-// ── 2. Window body builders (all data from CONFIG) ────────────────────
+
 function buildAbout() {
   const a = CONFIG.about;
   document.getElementById('wb-about').innerHTML = `
@@ -722,7 +716,7 @@ async function loadWeather() {
   }
 }
 
-// ── 8. DONUT (IIFE so its vars don't pollute global scope) ────────────
+// ── 8. DONUT IIFE so its vars don't pollute global scope ────────────
 (function setupDonut() {
   const cfg = CONFIG.donut;
   const R1=1, R2=2, K2=5, SW=cfg.cols, SH=cfg.rows;
