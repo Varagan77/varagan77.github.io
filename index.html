@@ -1,95 +1,884 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Varagan77-Portfolio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Johannes W.">
-  <meta name="description" content="My portfolio">
-  <meta property="og:title" content="Varagan77 - Portoflio">
-  <meta property="og:description" content="My portfolio">
-  <meta property="og:image" content="/some-image.png">
-  <meta property="og:url" content="/this-page.html">
-  <meta property="og:site_name" content="Your Site Name">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image:alt" content="Image description">
-  <link href="style.css" rel="stylesheet">
-  <link rel="stylesheet" href="variables.css">
- 
-
-<!-- <link rel="stylesheet" href="base.css">
-<link rel="stylesheet" href="components.css">
-<link rel="stylesheet" href="theme-toggle.css">
-<link rel="stylesheet" href="animations.css">
- -->
-
- 
-  <link href="https://fonts.cdnfonts.com/css/thegoodmonolith" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="variables.css">
-
-
+  <title>Varagan77-Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <div class="header">
-   <p class="header-profile">github.com/Varagan77</p>
+<!-- ════════════════════════════════════════════════════════════════════
+     CONFIGBLOCK
+     Edit me
+     ════════════════════════════════════════════════════════════════════ -->
+<script>
+const CONFIG = {
+
+  /* ── ID ─────────────────────────────────────────────────────── */
+  name:         'Johannes Willem Kotze',
+  alias:        'Varagan77',
+  role:         'Student',
+  location:     'South Africa',
+  github:       'https://github.com/Varagan77',
+  githubHandle: 'github.com/Varagan77',
+  email:        'johanneswillemkkotze@gmail.com',        
+  os_version:   'v0.77',
+
+  /* ── ABOUT──────────────────────────────── */
+  about: {
+    specialty:  '-',
+    aesthetic:  '-',
+    philosophy: '-',
+  },
+
+  /* ── SKILLS────────────── */
+  skills: {
+    'BACKEND':         ['C#', 'C++', 'Lua', 'Pyhton', 'SQL'],
+    'FRONTEND':        ['HTML', 'CSS', 'JavaScript'],
+    'DEVOPS & TOOLS':  ['Git', 'Linux', 'Terminal', 'Docker'],
+    'SOFT SKILLS':     ['Problem solving', 'Self-directed', 'Backend-first thinking'],
+  },
+
+  /* ── RESUME/CV ───────────────── */
+  resumeUrl: '',
+  cvUrl:     '',   
+  /* ── WEATHER─── */
+  weather: {
+    lat:      -26.2041,
+    lon:       28.0473,
+    timezone: 'Africa/Johannesburg',
+    city:     'Bloemfontein, ZA',
+  },
+
+  /* ── COLOUR PALETTE ──────────────────────────────────────────────── */
+  colors: {
+    accent:      '#ff6a00',          
+    accentDim:   '#8a3800',          
+    bg:          '#080600',         
+    bg2:         '#100c00',        
+    bg3:         '#181200',        
+    bg4:         '#1f1800',         
+    green:       '#39ff14',          
+    textMuted:   '#7a5020',         
+    winBg:       'rgba(10,7,0,0.97)',
+  },
+
+  /* ── MATRIX─────────────────────────────────────────────────── */
+  matrix: {
+    opacity:    0.20,    
+    speed:      200,     // ms per frame higher is slower
+    fontSize:   13,      
+    fadeAlpha:  0.014,  
+    brightFreq: 0.95,   
+    midFreq:    0.78,    
+  },
+
+  /* ── DONUT ───────────────────────────────────────────────────────── */
+  donut: {
+    cols:       88,       //width
+    rows:       60,       //height
+    fontSize:   '5px',
+    lineHeight: '0.82em',
+    opacity:    0.85,
+    speedA:     0.005,    //X speedd
+    speedB:     0.0018,   //Z speed
+    chars:      '.:-=+#%@',
+  },
+
+  /* ── TASKBAR ─────────────────────────────────────────────────────── */
+  taskbarHeight: '40px',
+
+  /* ── RIGHT WIDGET PANEL───────────────────────────────────── */
+  widgetWidth:   '162px',
+  widgetFadeOut: 0.50,   //opacity 0 = invisible 1 = full
+
+  /* ── BOOT SEQUENCE──────────────────── */
+  bootLines: [
+    { t: 'VARAGAN77OS BIOS v0.77 — All rights reserved',   c: ''     },
+    { t: 'CPU: Intel Core i9-13900K — 24 cores detected',  c: 'ok'   },
+    { t: 'RAM: 64GB DDR5 — integrity check passed',        c: 'ok'   },
+    { t: 'Mounting /dev/portfolio → /mnt/varagan77',        c: 'ok'   },
+    { t: 'Loading kernel: varagan77-os-5.0.77-LTS',         c: 'ok'   },
+    { t: 'Starting matrix render engine [ORANGE MODE]',     c: 'ok'   },
+    { t: 'Network adapter: github.com/Varagan77',           c: 'ok'   },
+    { t: 'Fetching weather data for Johannesburg',          c: 'ok'   },
+    { t: 'Loading user profile: Johannes W. Kotze',         c: 'ok'   },
+    { t: 'Compiling donut.exe — rotating at 0.005 rad/f',  c: 'ok'   },
+    { t: 'USB legacy device: Model-M keyboard clone',       c: 'warn' },
+    { t: 'Desktop environment: ORANGE_WM 2.1',              c: 'ok'   },
+    { t: 'System ready.  Welcome, Varagan77.',               c: ''     },
+  ],
+
+};
+</script>
+<!-- ══════END CONFIG ════ -->
+
+<style id="dvars"></style>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--font); background: var(--bg); }
+
+
+#matrix { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+
+#boot {
+  position: fixed; inset: 0; z-index: 999;
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  justify-content: center; padding: 3rem 4rem;
+}
+#boot-title { color: var(--or); font-size: 22px; margin-bottom: 1.5rem; letter-spacing: 4px; }
+#boot-log   { font-size: 12px; line-height: 2.1; max-height: 360px; overflow: hidden; }
+.bl         { color: var(--or); opacity: 0; transition: opacity 0.08s; }
+.bl.ok   .s { color: var(--green); }
+.bl.warn .s { color: #ffaa00; }
+.bl .s      { float: right; }
+#boot-bar   { height: 6px; background: var(--bg3); border: 1px solid var(--or2); border-radius: 1px; margin-top: 1.8rem; }
+#boot-fill  { height: 100%; width: 0; background: var(--or); transition: width 0.35s ease; border-radius: 1px; }
+#boot-sub   { font-size: 11px; color: var(--dim); margin-top: 6px; }
+
+
+#taskbar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: var(--bar-h); z-index: 500;
+  background: rgba(6,4,0,0.98);
+  border-top: 1px solid var(--or2);
+  display: flex; align-items: center; padding: 0 12px; gap: 8px;
+}
+#tb-brand {
+  font-size: 10px; color: var(--or2); letter-spacing: 0.5px;
+  white-space: nowrap; flex-shrink: 0;
+  padding-right: 12px; border-right: 1px solid var(--or2); margin-right: 4px;
+}
+#tb-brand a { color: var(--or2); text-decoration: none; }
+#tb-brand a:hover { color: var(--or); }
+#tb-open { display: flex; gap: 4px; flex: 1; overflow: hidden; }
+.tb-item {
+  background: var(--bg4); border: 1px solid var(--or2);
+  color: var(--or); font-family: var(--font); font-size: 10px;
+  padding: 3px 10px; cursor: pointer; height: 26px;
+  white-space: nowrap; display: flex; align-items: center; flex-shrink: 0;
+}
+.tb-item:hover   { background: rgba(255,106,0,0.08); }
+.tb-item.focused { background: rgba(255,106,0,0.14); border-color: var(--or); }
+#tb-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+#tb-time  { font-size: 11px; color: var(--or2); }
+#tb-date  { font-size: 9px;  color: var(--dim); }
+
+#desktop {
+  position: fixed; inset: 0; bottom: var(--bar-h);
+  z-index: 1; overflow: hidden;
+}
+
+
+#donut-center {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; z-index: 2;
+  display: inline-block;
+}
+#donut-pre {
+  display: block;
+  white-space: pre;
+  letter-spacing: 0.14em;
+  color: var(--or);
+  opacity: var(--donut-op);
+  font-size: var(--donut-fs);
+  line-height: var(--donut-lh);
+}
+
+#donut-ctrl {
+  position: absolute; bottom: 10px; left: 50%;
+  transform: translateX(-50%); z-index: 10;
+}
+#donut-btn {
+  background: rgba(6,4,0,0.75); border: 1px solid var(--or2);
+  color: var(--or2); font-family: var(--font); font-size: 10px;
+  padding: 3px 14px; cursor: pointer; letter-spacing: 1px;
+  pointer-events: all; transition: color 0.2s, border-color 0.2s;
+}
+#donut-btn:hover { border-color: var(--or); color: var(--or); }
+
+
+#username-banner {
+  position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+  z-index: 10; pointer-events: none; white-space: nowrap;
+  font-size: 22px; letter-spacing: 8px; text-transform: uppercase;
+  color: var(--or);
+  text-shadow: 0 0 8px var(--or), 0 0 24px var(--or), 0 0 48px #ff3300;
+  animation: banner-glow 2.4s ease-in-out infinite alternate, banner-glitch 6s steps(1) infinite;
+}
+@keyframes banner-glow {
+  from { text-shadow: 0 0 6px var(--or), 0 0 18px var(--or), 0 0 36px #ff3300; opacity: 0.85; }
+  to   { text-shadow: 0 0 14px var(--or), 0 0 40px var(--or), 0 0 80px #ff6a00; opacity: 1; }
+}
+@keyframes banner-glitch {
+  0%,90%          { transform: translateX(-50%) skewX(0deg); clip-path: none; }
+  91%             { transform: translateX(calc(-50% + 3px)) skewX(-2deg); clip-path: inset(10% 0 80% 0); }
+  92%             { transform: translateX(calc(-50% - 3px)) skewX(2deg);  clip-path: inset(60% 0 10% 0); }
+  93%             { transform: translateX(-50%) skewX(0deg); clip-path: none; }
+  96%             { transform: translateX(calc(-50% + 2px)); clip-path: inset(30% 0 50% 0); color: #fff; }
+  97%             { transform: translateX(-50%); clip-path: none; color: var(--or); }
+}
+
+
+#icons {
+  position: absolute; top: 16px; left: 16px;
+  display: flex; flex-direction: column; gap: 4px; z-index: 5;
+}
+.icon {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 5px; cursor: pointer; padding: 8px 10px;
+  border: 1px solid transparent; width: 82px; user-select: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.icon:hover  { border-color: var(--or); background: rgba(255,106,0,0.07); }
+.icon:active { background: rgba(255,106,0,0.14); }
+.icon .ico   { font-size: 26px; line-height: 1; }
+.icon .lbl   { font-size: 9px; color: #ffe8cc; text-align: center; text-shadow: 0 0 8px #000; word-break: break-word; }
+
+
+#widgets {
+  position: absolute; top: 16px; right: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+  z-index: 5; width: var(--widget-w);
+  opacity: var(--widget-fade);
+  transition: opacity 0.45s ease;
+}
+#widgets:hover { opacity: 1; }
+.widget {
+  background: rgba(8,5,0,0.92); border: 1px solid var(--or2); padding: 10px 12px;
+}
+.widget-title {
+  font-size: 9px; color: var(--dim); letter-spacing: 2px;
+  margin-bottom: 8px; border-bottom: 1px solid var(--bg3); padding-bottom: 4px;
+}
+#clock-canvas { display: block; margin: 0 auto; }
+#weather-main { text-align: center; }
+#w-loading    { font-size: 10px; color: var(--dim); }
+#w-icon       { font-size: 22px; margin-bottom: 4px; }
+#w-temp       { font-size: 28px; color: var(--or); line-height: 1; }
+#w-unit       { font-size: 11px; color: var(--dim); }
+#w-hi-lo      { font-size: 9px;  color: var(--dim); margin-top: 6px; }
+#w-city       { font-size: 9px;  color: var(--or2); margin-top: 2px; }
+#sysinfo      { font-size: 10px; color: var(--dim); line-height: 1.9; }
+
+
+.win {
+  position: absolute; display: none;
+  background: var(--win-bg); border: 1px solid var(--or2);
+  z-index: 100; min-width: 320px;
+}
+.win.show    { display: block; }
+.win.focused { border-color: var(--or); }
+.win-bar {
+  background: var(--or); color: var(--bg);
+  padding: 0 0 0 10px; display: flex; align-items: center;
+  height: 26px; cursor: move; user-select: none;
+  font-size: 11px; font-weight: bold; letter-spacing: 0.5px; font-family: var(--font);
+}
+.win-bar-btns { margin-left: auto; display: flex; height: 100%; }
+.wbtn {
+  width: 26px; height: 26px; border: none;
+  background: transparent; color: var(--bg);
+  font-size: 13px; cursor: pointer; font-family: var(--font);
+  display: flex; align-items: center; justify-content: center;
+}
+.wbtn:hover       { background: rgba(0,0,0,0.2); }
+.wbtn.close:hover { background: #c0392b; color: #fff; }
+.win-body {
+  padding: 14px; font-size: 11px; color: var(--or);
+  max-height: 420px; overflow-y: auto; line-height: 1.85;
+}
+.win-body::-webkit-scrollbar       { width: 5px; }
+.win-body::-webkit-scrollbar-track { background: var(--bg2); }
+.win-body::-webkit-scrollbar-thumb { background: var(--or2); }
+
+
+.prompt    { color: var(--green); }
+.dim-t     { color: var(--dim); }
+.w-section { color: var(--green); font-size: 10px; letter-spacing: 1px; margin: 10px 0 4px; }
+.kv        { display: flex; gap: 8px; }
+.kv .k     { color: var(--dim); min-width: 82px; }
+.kv .v     { color: var(--or); }
+.tag {
+  display: inline-block; border: 1px solid var(--or2);
+  color: var(--dim); font-size: 9px; padding: 1px 7px; margin: 2px 2px 2px 0;
+}
+.project-card {
+  border: 1px solid var(--bg4); padding: 8px 10px; margin-bottom: 7px;
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.project-card:hover { border-color: var(--or); background: rgba(255,106,0,0.05); }
+.project-card .pn { color: var(--or); font-size: 11px; }
+.project-card .pd { color: var(--dim); font-size: 10px; margin-top: 2px; }
+.project-card .pm { font-size: 9px; color: #5a3510; margin-top: 4px; }
+a.ol { color: var(--or); text-decoration: none; border-bottom: 1px solid var(--or2); }
+a.ol:hover { color: #fff; border-bottom-color: var(--or); }
+.ldot::after { content: '...'; animation: ld 1.2s infinite steps(1); }
+@keyframes ld { 0%{content:'.'} 33%{content:'..'} 66%{content:'...'} }
+.resize-br {
+  position: absolute; bottom: 0; right: 0; width: 14px; height: 14px;
+  cursor: se-resize; border-right: 2px solid var(--or2); border-bottom: 2px solid var(--or2);
+}
+</style>
+
+<!-- ══ CANVAS ═══════════════════════════════════════════════════════ -->
+<canvas id="matrix"></canvas>
+
+<!-- ══ BOOT ══════════════════════════════════════════════════════════ -->
+<div id="boot">
+  <div id="boot-title">VARAGAN77OS &nbsp;<span id="boot-ver"></span></div>
+  <div id="boot-log"></div>
+  <div id="boot-bar"><div id="boot-fill"></div></div>
+  <div id="boot-sub">Initialising...</div>
+</div>
+
+<!-- ══ DESKTOP ═══════════════════════════════════════════════════════ -->
+<div id="desktop" style="display:none;">
+
+
+  <div id="username-banner"><span id="username-text"></span></div>
+
+
+  <div id="donut-center">
+    <pre id="donut-pre"></pre>
   </div>
+  <div id="donut-ctrl">
+    <button id="donut-btn">⏸ PAUSE</button>
+  </div>
+
   
-  <pre class="user-logo">
-    ▄               ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
-   ▐░▌             ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
-    ▐░▌           ▐░▌ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌     ▐░▌ ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌
-     ▐░▌         ▐░▌  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌       ▐░▌▐░▌▐░▌    ▐░▌         ▐░▌          ▐░▌ 
-      ▐░▌       ▐░▌   ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▌   ▐░▌        ▐░▌          ▐░▌  
-       ▐░▌     ▐░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌▐░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌       ▐░▌          ▐░▌   
-        ▐░▌   ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌ ▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▐░▌ ▐░▌      ▐░▌          ▐░▌    
-         ▐░▌ ▐░▌      ▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌    ▐░▌▐░▌     ▐░▌          ▐░▌     
-          ▐░▐░▌       ▐░▌       ▐░▌▐░▌      ▐░▌ ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌     ▐░▐░▌    ▐░▌          ▐░▌      
-           ▐░▌        ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌      ▐░░▌   ▐░▌          ▐░▌       
-            ▀          ▀         ▀  ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀        ▀▀     ▀            ▀        
-                                                                                                                              
-   </pre>
-   <h3>
-    <p class="name">Johannes Willem Kotze <span class="blinker">|</span></p>
-    </h3>
-     <button id="play-pause">Pause</button>
-<pre id="console"></pre>
-
- <h4>
- 
-  <div class="theme-switch">
-    <input type="checkbox" id="theme-toggle" />
-    <label for="theme-toggle" class="switch-label">
-      <span class="icon sun">☀︎</span>
-      <span class="icon moon">☾ </span>
-      <span class="ball"></span>
-    </label>
-    
+  <div id="icons">
+    <div class="icon" onclick="openWin('w-about')">
+      <div class="ico">👤</div><div class="lbl">about.exe</div>
+    </div>
+    <div class="icon" onclick="openWin('w-projects'); loadProjects()">
+      <div class="ico">📁</div><div class="lbl">projects.exe</div>
+    </div>
+    <div class="icon" onclick="openWin('w-skills')">
+      <div class="ico">⚙️</div><div class="lbl">skills.exe</div>
+    </div>
+    <div class="icon" onclick="openWin('w-resume')">
+      <div class="ico">📄</div><div class="lbl">resume.exe</div>
+    </div>
+    <div class="icon" onclick="openWin('w-contact')">
+      <div class="ico">📡</div><div class="lbl">contact.exe</div>
+    </div>
   </div>
-  <div class="link-group">
-  <p class="line">------------------------</p>
-  <p class="link"></p>Resume  → <a href="">Download my resume...</a> </p>
-  <p class="link"></p>CV  →  <a href="">Download my CV...</a></p>
-  <p class="link">GitHub  →   <a href="github.com/Varagan77">github.com/Varagan77</a></p> 
-  <p class="line">------------------------</p>
+
+
+  <div id="widgets">
+    <div class="widget">
+      <div class="widget-title">SYS_CLOCK</div>
+      <canvas id="clock-canvas" width="138" height="138"></canvas>
+    </div>
+    <div class="widget">
+      <div class="widget-title">WEATHER</div>
+      <div id="weather-main">
+        <div id="w-loading" class="ldot">Fetching</div>
+      </div>
+    </div>
+    <div class="widget">
+      <div class="widget-title">SYS_INFO</div>
+      <div id="sysinfo">
+        USER: <span id="si-alias"></span><br>
+        ROLE: <span id="si-role"></span><br>
+        OS:&nbsp;&nbsp;ORANGE_WM 2.1<br>
+        UP:&nbsp;&nbsp;<span id="si-up">00:00:00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="win" id="w-about" style="top:60px;left:110px;width:380px;">
+    <div class="win-bar" onmousedown="dragStart(event,'w-about')">
+      <span>📄 about.exe</span>
+      <div class="win-bar-btns">
+        <button class="wbtn" onclick="minimiseWin('w-about')">─</button>
+        <button class="wbtn close" onclick="closeWin('w-about')">✕</button>
+      </div>
+    </div>
+    <div class="win-body" id="wb-about"></div>
+    <div class="resize-br" onmousedown="resizeStart(event,'w-about')"></div>
+  </div>
+
+
+  <div class="win" id="w-projects" style="top:50px;left:200px;width:440px;">
+    <div class="win-bar" onmousedown="dragStart(event,'w-projects')">
+      <span>📁 projects.exe — [live GitHub]</span>
+      <div class="win-bar-btns">
+        <button class="wbtn" onclick="minimiseWin('w-projects')">─</button>
+        <button class="wbtn close" onclick="closeWin('w-projects')">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div><span class="prompt">C:\<span class="j-alias"></span>&gt;</span> projects.exe --fetch-github</div><br>
+      <div id="projects-content"><span class="ldot">Connecting to GitHub</span></div>
+    </div>
+    <div class="resize-br" onmousedown="resizeStart(event,'w-projects')"></div>
+  </div>
+
+ 
+  <div class="win" id="w-skills" style="top:80px;left:160px;width:360px;">
+    <div class="win-bar" onmousedown="dragStart(event,'w-skills')">
+      <span>⚙️ skills.exe</span>
+      <div class="win-bar-btns">
+        <button class="wbtn" onclick="minimiseWin('w-skills')">─</button>
+        <button class="wbtn close" onclick="closeWin('w-skills')">✕</button>
+      </div>
+    </div>
+    <div class="win-body" id="wb-skills"></div>
+    <div class="resize-br" onmousedown="resizeStart(event,'w-skills')"></div>
+  </div>
+
+  
+  <div class="win" id="w-resume" style="top:70px;left:180px;width:400px;">
+    <div class="win-bar" onmousedown="dragStart(event,'w-resume')">
+      <span>📄 resume.exe</span>
+      <div class="win-bar-btns">
+        <button class="wbtn" onclick="minimiseWin('w-resume')">─</button>
+        <button class="wbtn close" onclick="closeWin('w-resume')">✕</button>
+      </div>
+    </div>
+    <div class="win-body" id="wb-resume"></div>
+    <div class="resize-br" onmousedown="resizeStart(event,'w-resume')"></div>
+  </div>
+
+  
+  <div class="win" id="w-contact" style="top:90px;left:170px;width:360px;">
+    <div class="win-bar" onmousedown="dragStart(event,'w-contact')">
+      <span>📡 contact.exe</span>
+      <div class="win-bar-btns">
+        <button class="wbtn" onclick="minimiseWin('w-contact')">─</button>
+        <button class="wbtn close" onclick="closeWin('w-contact')">✕</button>
+      </div>
+    </div>
+    <div class="win-body" id="wb-contact"></div>
+    <div class="resize-br" onmousedown="resizeStart(event,'w-contact')"></div>
+  </div>
+
 </div>
-<div class="section-group">
-  <p class="about-me">About Me</p>
-  <p class="projects">Projects</p>
-  <p class="logs">Logs</p>
+
+<!-- ══ TASKBAR ════════════════════════════════════════════════════════ -->
+<div id="taskbar">
+  <div id="tb-brand">
+    created by <a id="tb-ghlink" href="" target="_blank"></a>
+  </div>
+  <div id="tb-open"></div>
+  <div id="tb-right">
+    <div>
+      <div id="tb-time">--:--:--</div>
+      <div id="tb-date"></div>
+    </div>
+  </div>
 </div>
-</div>
+
+<!-- ══ SCRIPT ════════════════════════════════════════════════════════ -->
+<script>
+
+(function init() {
+  const c = CONFIG.colors;
+  document.getElementById('dvars').textContent = `
+    :root {
+      --or:         ${c.accent};
+      --or2:        ${c.accentDim};
+      --bg:         ${c.bg};
+      --bg2:        ${c.bg2};
+      --bg3:        ${c.bg3};
+      --bg4:        ${c.bg4};
+      --green:      ${c.green};
+      --dim:        ${c.textMuted};
+      --win-bg:     ${c.winBg};
+      --bar-h:      ${CONFIG.taskbarHeight};
+      --widget-w:   ${CONFIG.widgetWidth};
+      --widget-fade:${CONFIG.widgetFadeOut};
+      --donut-fs:   ${CONFIG.donut.fontSize};
+      --donut-lh:   ${CONFIG.donut.lineHeight};
+      --donut-op:   ${CONFIG.donut.opacity};
+      --font: 'Share Tech Mono','Courier New',monospace;
+    }
+  `;
+
+  document.querySelectorAll('.j-alias').forEach(el => el.textContent = CONFIG.alias);
+  document.getElementById('boot-ver').textContent = CONFIG.os_version;
+  document.getElementById('si-alias').textContent = CONFIG.alias;
+  document.getElementById('username-text').textContent = CONFIG.alias;
+  document.getElementById('si-role').textContent  = CONFIG.role;
+  document.getElementById('tb-ghlink').href        = CONFIG.github;
+  document.getElementById('tb-ghlink').textContent = CONFIG.githubHandle;
 
 
- </h4>
+  buildAbout(); buildSkills(); buildResume(); buildContact();
+})();
 
 
+function buildAbout() {
+  const a = CONFIG.about;
+  document.getElementById('wb-about').innerHTML = `
+    <div><span class="prompt">C:\\${CONFIG.alias}&gt;</span> about.exe</div><br>
+    <div class="w-section">&gt; WHOAMI</div>
+    <div class="kv"><span class="k">name:</span><span class="v">${CONFIG.name}</span></div>
+    <div class="kv"><span class="k">alias:</span><span class="v">${CONFIG.alias}</span></div>
+    <div class="kv"><span class="k">role:</span><span class="v">${CONFIG.role}</span></div>
+    <div class="kv"><span class="k">location:</span><span class="v">${CONFIG.location}</span></div>
+    <br>
+    <div class="w-section">&gt; SYSTEM.INFO</div>
+    <div class="kv"><span class="k">specialty:</span><span class="v">${a.specialty}</span></div>
+    <div class="kv"><span class="k">aesthetic:</span><span class="v">${a.aesthetic}</span></div>
+    <div class="kv"><span class="k">philosophy:</span><span class="v">${a.philosophy}</span></div>
+    <br>
+    <div class="w-section">&gt; LINKS</div>
+    <div>&rarr; <a class="ol" href="${CONFIG.github}" target="_blank">${CONFIG.githubHandle}</a></div>
+    <br>
+    <div class="dim-t">[process exited with code 0]</div>
+  `;
+}
 
-  <script src="main.js"></script>
-  <script src="donut.js"></script>
+function buildSkills() {
+  let html = `<div><span class="prompt">C:\\${CONFIG.alias}&gt;</span> skills.exe --list</div><br>`;
+  for (const [sec, tags] of Object.entries(CONFIG.skills)) {
+    html += `<div class="w-section">&gt; ${sec}</div>`;
+    html += tags.map(t => `<span class="tag">${t}</span>`).join('');
+    html += '<br>';
+  }
+  html += `<br><div class="dim-t">[edit: CONFIG.skills in index.html]</div>`;
+  document.getElementById('wb-skills').innerHTML = html;
+}
+
+function buildResume() {
+  function card(url, filename, desc) {
+    return url
+      ? `<div class="project-card" onclick="window.open('${url}','_blank')">
+           <div class="pn">📄 ${filename}</div>
+           <div class="pd">${desc}</div>
+           <div class="pm">&rarr; click to download</div>
+         </div>`
+      : `<div class="project-card" style="cursor:default;opacity:0.5;">
+           <div class="pn" style="color:var(--dim)">📄 ${filename}</div>
+           <div class="pd">Set CONFIG.resumeUrl / CONFIG.cvUrl to enable</div>
+         </div>`;
+  }
+  document.getElementById('wb-resume').innerHTML = `
+    <div><span class="prompt">C:\\${CONFIG.alias}&gt;</span> resume.exe</div><br>
+    <div class="w-section">&gt; DOCUMENTS</div>
+    ${card(CONFIG.resumeUrl, `Resume_${CONFIG.alias}.pdf`, '1-page resume — ATS keyword optimised')}
+    ${card(CONFIG.cvUrl,     `CV_${CONFIG.alias}.pdf`,     'Full CV — projects, contributions & detail')}
+    <div class="w-section">&gt; ATS.NOTE</div>
+    <div class="dim-t">Resume targets ATS keyword scanners (Workday, Greenhouse).</div>
+    <div class="dim-t">CV for direct/recruiter submissions with full context.</div>
+  `;
+}
+
+function buildContact() {
+  document.getElementById('wb-contact').innerHTML = `
+    <div><span class="prompt">C:\\${CONFIG.alias}&gt;</span> contact.exe</div><br>
+    <div class="kv"><span class="k">GitHub:</span><span class="v"><a class="ol" href="${CONFIG.github}" target="_blank">${CONFIG.githubHandle}</a></span></div>
+    <div class="kv"><span class="k">Email:</span><span class="v"><a class="ol" href="mailto:${CONFIG.email}">${CONFIG.email}</a></span></div>
+    <br>
+    <div class="dim-t">Available for backend roles &amp; collabs.</div>
+    <div class="dim-t">Response time: &lt; 24h</div>
+  `;
+}
+
+// ── 3. BOOT SEQUENCE ─────────────────────────────────────────────────
+async function runBoot() {
+  const log  = document.getElementById('boot-log');
+  const fill = document.getElementById('boot-fill');
+  const sub  = document.getElementById('boot-sub');
+  for (let i = 0; i < CONFIG.bootLines.length; i++) {
+    const {t, c} = CONFIG.bootLines[i];
+    const d = document.createElement('div');
+    d.className = 'bl ' + c;
+    const badge = c === 'ok' ? '[  OK  ]' : c === 'warn' ? '[ WARN ]' : '';
+    d.innerHTML = `&gt; ${t}${badge ? `<span class="s">${badge}</span>` : ''}`;
+    log.appendChild(d);
+    requestAnimationFrame(() => d.style.opacity = '1');
+    fill.style.width = ((i + 1) / CONFIG.bootLines.length * 100) + '%';
+    sub.textContent = t;
+    await sleep(155 + Math.random() * 125);
+  }
+  await sleep(500);
+  document.getElementById('boot').style.display = 'none';
+  document.getElementById('desktop').style.display = 'block';
+  startAll();
+}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ── 4. MATRIX RAIN ───────────────────────────────────────────────────
+function startMatrix() {
+  const canvas = document.getElementById('matrix');
+  const ctx    = canvas.getContext('2d');
+  const cfg    = CONFIG.matrix;
+  canvas.style.opacity = cfg.opacity;
+
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const colW = cfg.fontSize + 2;
+  let drops  = [];
+  const initDrops = () => {
+    drops = Array.from({ length: Math.floor(canvas.width / colW) }, () => Math.random() * -60);
+  };
+  initDrops();
+  window.addEventListener('resize', initDrops);
+
+  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+  setInterval(() => {
+    ctx.fillStyle = `rgba(8,6,0,${cfg.fadeAlpha})`;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${cfg.fontSize}px monospace`;
+    for (let i = 0; i < drops.length; i++) {
+      const r = Math.random();
+      ctx.fillStyle = r > cfg.brightFreq ? '#ffffff'
+                    : r > cfg.midFreq    ? '#ff8c00'
+                    :                      CONFIG.colors.accent;
+      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * colW, drops[i] * cfg.fontSize);
+      if (drops[i] * cfg.fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }, cfg.speed);
+}
+
+// ── 5. ANALOG CLOCK ──────────────────────────────────────────────────
+function drawClock() {
+  const c = document.getElementById('clock-canvas');
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height, cx = W/2, cy = H/2, r = W/2 - 8;
+  const now = new Date();
+  const hr = now.getHours() % 12, mn = now.getMinutes(), sc = now.getSeconds();
+
+  ctx.clearRect(0, 0, W, H);
+  // Face
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+  ctx.fillStyle = 'rgba(10,7,0,0.96)'; ctx.fill();
+  ctx.strokeStyle = CONFIG.colors.accentDim; ctx.lineWidth = 1.5; ctx.stroke();
+  // Ticks
+  for (let i = 0; i < 12; i++) {
+    const a = (i/12)*Math.PI*2, major = i%3===0;
+    ctx.beginPath();
+    ctx.moveTo(cx+Math.cos(a)*(major ? r-14 : r-8), cy+Math.sin(a)*(major ? r-14 : r-8));
+    ctx.lineTo(cx+Math.cos(a)*(r-3), cy+Math.sin(a)*(r-3));
+    ctx.strokeStyle = major ? CONFIG.colors.accent : '#3a1800';
+    ctx.lineWidth = major ? 2 : 1; ctx.stroke();
+  }
+  // Hands
+  const hand = (angle, len, w, col) => {
+    ctx.beginPath(); ctx.moveTo(cx, cy);
+    ctx.lineTo(cx+Math.cos(angle)*len, cy+Math.sin(angle)*len);
+    ctx.strokeStyle = col; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.stroke();
+  };
+  hand(((hr+mn/60)/12)*Math.PI*2-Math.PI/2, r*0.52, 2.5, CONFIG.colors.accent);
+  hand(((mn+sc/60)/60)*Math.PI*2-Math.PI/2, r*0.72, 1.8, '#ff8c00');
+  hand((sc/60)*Math.PI*2-Math.PI/2,         r*0.83, 1,   CONFIG.colors.green);
+  ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI*2);
+  ctx.fillStyle = CONFIG.colors.accent; ctx.fill();
+}
+
+// ── 6. TASKBAR CLOCK + UPTIME ────────────────────────────────────────
+const bootTime = Date.now();
+function startClock() {
+  const tick = () => {
+    const now = new Date();
+    document.getElementById('tb-time').textContent = now.toLocaleTimeString('en-GB');
+    document.getElementById('tb-date').textContent = now.toLocaleDateString('en-GB', {weekday:'short',day:'2-digit',month:'short'});
+    const up = Math.floor((Date.now()-bootTime)/1000);
+    const p  = n => String(n).padStart(2,'0');
+    document.getElementById('si-up').textContent = `${p(Math.floor(up/3600))}:${p(Math.floor((up%3600)/60))}:${p(up%60)}`;
+    drawClock();
+  };
+  tick(); setInterval(tick, 1000);
+}
+
+// ── 7. WEATHER ───────────────────────────────────────────────────────
+const WX_ICONS = {'0':'☀️','1':'🌤','2':'⛅','3':'☁️','45':'🌫','48':'🌫','51':'🌦','61':'🌧','71':'🌨','80':'🌦','95':'⛈','99':'⛈'};
+async function loadWeather() {
+  const w = CONFIG.weather;
+  try {
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${w.lat}&longitude=${w.lon}&current=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min&timezone=${w.timezone}&forecast_days=1`);
+    const d = await res.json();
+    const temp = Math.round(d.current.temperature_2m);
+    const code = String(d.current.weathercode);
+    const hi = Math.round(d.daily.temperature_2m_max[0]);
+    const lo = Math.round(d.daily.temperature_2m_min[0]);
+    document.getElementById('weather-main').innerHTML = `
+      <div id="w-icon">${WX_ICONS[code]||'🌡'}</div>
+      <div id="w-temp">${temp}<span id="w-unit">°C</span></div>
+      <div id="w-hi-lo">H:${hi}° / L:${lo}°</div>
+      <div id="w-city">${w.city}</div>
+    `;
+  } catch(e) {
+    document.getElementById('weather-main').innerHTML = '<div id="w-loading" style="color:var(--dim)">Offline</div>';
+  }
+}
+
+// ── 8. DONUT IIFE so its vars don't pollute global scope ────────────
+(function setupDonut() {
+  const cfg = CONFIG.donut;
+  const R1=1, R2=2, K2=5, SW=cfg.cols, SH=cfg.rows;
+  const K1  = SW*K2*2/(8*(R1+R2));  // was *3 — reduced so donut sits smaller than its grid
+  const CHR = cfg.chars;
+  let dA=1.57, dB=0, playing=true, raf;
+
+  function renderDonut(A, B) {
+    const ca=Math.cos(A),sa=Math.sin(A),cb=Math.cos(B),sb=Math.sin(B);
+    const out=new Array(SW*SH).fill(' ');
+    const zb =new Array(SW*SH).fill(0);
+    for(let t=0; t<6.2832; t+=0.07){
+      const ct=Math.cos(t), st=Math.sin(t);
+      const cx=R2+R1*ct, cy=R1*st;
+      for(let p=0; p<6.2832; p+=0.02){
+        const cp=Math.cos(p), sp=Math.sin(p);
+        const x = cx*(cb*cp+sa*sb*sp) - cy*ca*sb;
+        const y = cx*(sb*cp-sa*cb*sp) + cy*ca*cb;
+        const z = cx*ca*sp + cy*sa + K2;
+        const zi = 1/z;
+        const xp = ((0.5*SW + K1*zi*x)|0);
+        const yp = ((0.5*SH - K1*zi*y)|0);
+        if(xp<0||xp>=SW||yp<0||yp>=SH) continue;
+        const idx = SW*yp+xp;
+        const lum = 0.707*(cp*ct*sb - ca*ct*sp - sa*st + cb*(ca*st - ct*sa*sp));
+        if(lum<0||zi<=zb[idx]) continue;
+        zb[idx]=zi; out[idx]=CHR[(lum*CHR.length)|0];
+      }
+    }
+    let s='';
+    for(let row=0; row<SH; row++) s += out.slice(row*SW,(row+1)*SW).join('')+'\n';
+    return s;
+  }
+
+  const pre = document.getElementById('donut-pre');
+  function frame() {
+    pre.textContent = renderDonut(dA, dB);
+    dA += cfg.speedA; dB += cfg.speedB;
+    if(playing) raf = requestAnimationFrame(frame);
+  }
+
+  document.getElementById('donut-btn').addEventListener('click', () => {
+    playing = !playing;
+    document.getElementById('donut-btn').textContent = playing ? '⏸ PAUSE' : '▶ RESUME';
+    if(playing) frame(); else cancelAnimationFrame(raf);
+  });
+
+  window._donutStart = frame;  // called by startAll()
+})();
+
+// ── 9. GITHUB PROJECTS ───────────────────────────────────────────────
+let projectsLoaded = false;
+async function loadProjects() {
+  if (projectsLoaded) return;
+  const el = document.getElementById('projects-content');
+  try {
+    const res = await fetch(`https://api.github.com/users/${CONFIG.alias}/repos?sort=updated&per_page=12`);
+    const repos = await res.json();
+    if (!Array.isArray(repos)||!repos.length){
+      el.innerHTML='<span class="dim-t">No public repos found.</span>'; return;
+    }
+    projectsLoaded = true;
+    el.innerHTML = repos.map(r=>`
+      <div class="project-card" onclick="window.open('${r.html_url}','_blank')">
+        <div class="pn">📂 ${r.name}</div>
+        <div class="pd">${r.description||'<span class="dim-t">No description</span>'}</div>
+        <div class="pm">${r.language?`[${r.language}]`:''} ★${r.stargazers_count} · ${new Date(r.updated_at).toLocaleDateString('en-GB')}</div>
+      </div>
+    `).join('');
+  } catch(e){
+    el.innerHTML='<span class="dim-t">GitHub API error. Check connection.</span>';
+  }
+}
+
+// ── 10. WINDOW MANAGER ───────────────────────────────────────────────
+let zTop=200;
+const minimised={};
+
+function openWin(id) {
+  const w=document.getElementById(id);
+  if(minimised[id]){w.style.display='block';minimised[id]=false;}
+  w.classList.add('show'); focusWin(id); updateTaskbar();
+}
+function closeWin(id) {
+  document.getElementById(id).classList.remove('show'); updateTaskbar();
+}
+function minimiseWin(id) {
+  const w=document.getElementById(id);
+  w.style.display='none'; minimised[id]=true; updateTaskbar();
+}
+function focusWin(id) {
+  document.querySelectorAll('.win').forEach(w=>w.classList.remove('focused'));
+  const w=document.getElementById(id);
+  w.classList.add('focused'); w.style.zIndex=++zTop;
+}
+function updateTaskbar() {
+  const tb=document.getElementById('tb-open');
+  tb.innerHTML='';
+  document.querySelectorAll('.win').forEach(w=>{
+    if(!w.classList.contains('show')&&!minimised[w.id]) return;
+    const label=w.querySelector('.win-bar span');
+    const btn=document.createElement('div');
+    btn.className='tb-item'+(w.classList.contains('focused')?' focused':'');
+    btn.textContent=label?label.textContent.slice(0,28):w.id;
+    btn.onclick=()=>{
+      if(minimised[w.id]) openWin(w.id); else focusWin(w.id);
+      updateTaskbar();
+    };
+    tb.appendChild(btn);
+  });
+}
+
+// ── 11. DRAG ─────────────────────────────────────────────────────────
+let drag=null,dragOX,dragOY;
+function dragStart(e,id){
+  drag=document.getElementById(id);
+  const r=drag.getBoundingClientRect();
+  dragOX=e.clientX-r.left; dragOY=e.clientY-r.top;
+  focusWin(id); updateTaskbar(); e.preventDefault();
+}
+document.addEventListener('mousemove',e=>{
+  if(!drag) return;
+  drag.style.left=Math.max(0,e.clientX-dragOX)+'px';
+  drag.style.top =Math.max(0,e.clientY-dragOY)+'px';
+  drag.style.right='auto'; drag.style.bottom='auto';
+});
+document.addEventListener('mouseup',()=>drag=null);
+
+// ── 12. RESIZE ───────────────────────────────────────────────────────
+let rsEl=null,rsX,rsY,rsW,rsH;
+function resizeStart(e,id){
+  rsEl=document.getElementById(id);
+  rsX=e.clientX; rsY=e.clientY; rsW=rsEl.offsetWidth; rsH=rsEl.offsetHeight;
+  e.preventDefault(); e.stopPropagation();
+}
+document.addEventListener('mousemove',e=>{
+  if(!rsEl) return;
+  rsEl.style.width=Math.max(260,rsW+(e.clientX-rsX))+'px';
+  const nh=Math.max(140,rsH+(e.clientY-rsY));
+  rsEl.style.maxHeight=nh+'px';
+  const body=rsEl.querySelector('.win-body');
+  if(body) body.style.maxHeight=(nh-30)+'px';
+});
+document.addEventListener('mouseup',()=>rsEl=null);
+
+// ── 13. DESKTOP CLICK DEFOCUS ────────────────────────────────────────
+document.getElementById('desktop').addEventListener('mousedown',e=>{
+  if(e.target.id==='desktop'){
+    document.querySelectorAll('.win').forEach(w=>w.classList.remove('focused'));
+    updateTaskbar();
+  }
+});
+
+// ── 14. KICK OFF ─────────────────────────────────────────────────────
+function startAll(){
+  startMatrix();
+  startClock();
+  loadWeather();
+  window._donutStart();
+}
+
+runBoot();
+</script>
 </body>
 </html>
-
