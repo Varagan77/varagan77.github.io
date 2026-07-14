@@ -8,14 +8,20 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════════════════════════════
-     CONFIGBLOCK
-     Edit me
-     ════════════════════════════════════════════════════════════════════ -->
+<!-- 
+  ┌───────────────────────────────────────────────────────────────────────┐
+  │ CONFIG                                                                │
+  └───────────────────────────────────────────────────────────────────────┘
+ -->
 <script>
 const CONFIG = {
 
-  /* ── ID ─────────────────────────────────────────────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │ ID                                                                          │
+  └─────────────────────────────────────────────────────────────────────────────┘
+
+*/
   name:         'Johannes Willem Kotze',
   alias:        'Varagan77',
   role:         'Student',
@@ -25,34 +31,56 @@ const CONFIG = {
   email:        'johanneswillemkkotze@gmail.com',        
   os_version:   'v0.77',
 
-  /* ── ABOUT──────────────────────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   ABOUT                                                                     │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   about: {
-    specialty:  '-',
-    aesthetic:  '-',
-    philosophy: '-',
+    specialty:  'Backend, Systems & App Development',
+    aesthetic:  'Retro Freak',
+    philosophy: 'If it works, it works / A Fool admires Complexity, a Genuis admires Simplicity'
   },
 
-  /* ── SKILLS────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   SKILLS                                                                    │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   skills: {
     'BACKEND':         ['C#', 'C++', 'Lua', 'Pyhton', 'SQL'],
     'FRONTEND':        ['HTML', 'CSS', 'JavaScript'],
-    'DEVOPS & TOOLS':  ['Git', 'Linux', 'Terminal', 'Docker'],
-    'SOFT SKILLS':     ['Problem solving', 'Self-directed', 'Backend-first thinking'],
+    'DEVOPS & TOOLS':  ['Git'],
+    'SOFT SKILLS':     ['Enjoys Solving Difficult Bugs','Learns by Building','Mentor to others',],
   },
 
-  /* ── RESUME/CV ───────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   RESUME/CV                                                                 │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   resumeUrl: '',
   cvUrl:     '',   
-  /* ── WEATHER─── */
-  weather: {
-    lat:      -26.2041,
-    lon:       28.0473,
-    timezone: 'Africa/Johannesburg',
-    city:     'Bloemfontein, ZA',
-  },
-
-  /* ── COLOUR PALETTE ──────────────────────────────────────────────── */
-  colors: {
+  
+/* 
+  ┌────────────────────────────────────────────────────────────────────────────┐
+  │   WEATHER                                                                  │
+  │   weather: {                                                               │
+  │     lat:      -26.2041,                                                    │
+  │     lon:       28.0473,                                                    │
+  │     timezone: 'Africa/Johannesburg',                                       │
+  │     city:     'Bloemfontein, ZA',                                          │
+  │   },                                                                       │
+  │                                                                            │
+  └────────────────────────────────────────────────────────────────────────────┘
+ */
+  
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  COLOUR PALETTE                                                         │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
+   colors: {
     accent:      '#ff6a00',          
     accentDim:   '#8a3800',          
     bg:          '#080600',         
@@ -64,55 +92,75 @@ const CONFIG = {
     winBg:       'rgba(10,7,0,0.97)',
   },
 
-  /* ── MATRIX─────────────────────────────────────────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   MATRIX                                                                    │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   matrix: {
     opacity:    0.20,    
-    speed:      200,     // ms per frame higher is slower
+    speed:      200,     
     fontSize:   13,      
     fadeAlpha:  0.014,  
     brightFreq: 0.95,   
     midFreq:    0.78,    
   },
 
-  /* ── DONUT ───────────────────────────────────────────────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   DONUT                         (o)                                         │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   donut: {
-    cols:       88,       //width
-    rows:       60,       //height
+    cols:       88,       
+    rows:       60,       
     fontSize:   '5px',
     lineHeight: '0.82em',
     opacity:    0.85,
-    speedA:     0.005,    //X speedd
-    speedB:     0.0018,   //Z speed
+    speedA:     0.005,    
+    speedB:     0.0018,   
     chars:      '.:-=+#%@',
   },
 
-  /* ── TASKBAR ─────────────────────────────────────────────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   TASKBAR                                                                   │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   taskbarHeight: '40px',
 
-  /* ── RIGHT WIDGET PANEL───────────────────────────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   PANEL                                                                     │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   widgetWidth:   '162px',
-  widgetFadeOut: 0.50,   //opacity 0 = invisible 1 = full
+  widgetFadeOut: 0.50,  
 
-  /* ── BOOT SEQUENCE──────────────────── */
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │   BOOTER TOOTER                                                             │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
   bootLines: [
-    { t: 'VARAGAN77OS BIOS v0.77 — All rights reserved',   c: ''     },
-    { t: 'CPU: Intel Core i9-13900K — 24 cores detected',  c: 'ok'   },
-    { t: 'RAM: 64GB DDR5 — integrity check passed',        c: 'ok'   },
-    { t: 'Mounting /dev/portfolio → /mnt/varagan77',        c: 'ok'   },
-    { t: 'Loading kernel: varagan77-os-5.0.77-LTS',         c: 'ok'   },
-    { t: 'Starting matrix render engine [ORANGE MODE]',     c: 'ok'   },
-    { t: 'Network adapter: github.com/Varagan77',           c: 'ok'   },
-    { t: 'Fetching weather data for Johannesburg',          c: 'ok'   },
-    { t: 'Loading user profile: Johannes W. Kotze',         c: 'ok'   },
-    { t: 'Compiling donut.exe — rotating at 0.005 rad/f',  c: 'ok'   },
-    { t: 'USB legacy device: Model-M keyboard clone',       c: 'warn' },
-    { t: 'Desktop environment: ORANGE_WM 2.1',              c: 'ok'   },
-    { t: 'System ready.  Welcome, Varagan77.',               c: ''     },
+  { t: 'VARAGAN77OS BIOS v0.77',                              c: ''    },
+  { t: 'Loading Galactic Empire archives...',                c: 'ok'   },
+  { t: 'Black Mesa personnel accounted for.',                c: 'ok'   },
+  { t: 'HEV suit diagnostics passed.',                       c: 'ok'   },
+  { t: 'RED team ready. BLU team complaining.',              c: 'ok'   },
+  { t: 'Questioning Mr Anderson',                            c: 'warn' },
+  { t: 'Pawnee Parks Department still underfunded.',         c: 'warn' },
+  { t: 'Brewing coffee... this may take a while.',           c: 'ok'   },
+  { t: 'Calibrating copy-pasting module...',                 c: 'ok'   },
+  { t: 'Loading GitHub issues I will definitely fix later.', c: 'warn' },
+  { t: 'Initializing orange desktop environment.',           c: 'ok'   },
+  { t: 'Spinning donut at nominal velocity.',                c: 'ok'   },
+  { t: 'System ready. Welcome, Scroller.',                   c: ''     },
   ],
 
 };
 </script>
-<!-- ══════END CONFIG ════ -->
+
 
 <style id="dvars"></style>
 
@@ -240,6 +288,29 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 .icon .ico   { font-size: 26px; line-height: 1; }
 .icon .lbl   { font-size: 9px; color: #ffe8cc; text-align: center; text-shadow: 0 0 8px #000; word-break: break-word; }
 
+/* 
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ .ico {                                                                                                             │
+  │   width: 26px;                                                                                                     │
+  │   height: 26px;                                                                                                    │
+  │   margin: 0 auto;                                                                                                  │
+  │   background-color: var(--or);                                                                                     │
+  │   -webkit-mask-image: var(--icon-url);                                                                             │
+  │   mask-image: var(--icon-url);                                                                                     │
+  │   -webkit-mask-size: contain;                                                                                      │
+  │   mask-size: contain;                                                                                              │
+  │   -webkit-mask-repeat: no-repeat;                                                                                  │
+  │   mask-repeat: no-repeat;                                                                                          │
+  │   -webkit-mask-position: center;                                                                                   │
+  │   mask-position: center;                                                                                           │
+  │   image-rendering: pixelated;                                                                                      │
+  │ }                                                                                                                  │
+  │ .icon:hover .ico { background-color: var(--green, #39ff14); }                                                      │
+  │                                                                                                                    │
+  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
+
+
 
 #widgets {
   position: absolute; top: 16px; right: 16px;
@@ -326,10 +397,10 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 }
 </style>
 
-<!-- ══ CANVAS ═══════════════════════════════════════════════════════ -->
+
 <canvas id="matrix"></canvas>
 
-<!-- ══ BOOT ══════════════════════════════════════════════════════════ -->
+
 <div id="boot">
   <div id="boot-title">VARAGAN77OS &nbsp;<span id="boot-ver"></span></div>
   <div id="boot-log"></div>
@@ -337,7 +408,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
   <div id="boot-sub">Initialising...</div>
 </div>
 
-<!-- ══ DESKTOP ═══════════════════════════════════════════════════════ -->
+
 <div id="desktop" style="display:none;">
 
 
@@ -353,23 +424,29 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 
   
   <div id="icons">
-    <div class="icon" onclick="openWin('w-about')">
-      <div class="ico">👤</div><div class="lbl">about.exe</div>
-    </div>
-    <div class="icon" onclick="openWin('w-projects'); loadProjects()">
-      <div class="ico">📁</div><div class="lbl">projects.exe</div>
-    </div>
-    <div class="icon" onclick="openWin('w-skills')">
-      <div class="ico">⚙️</div><div class="lbl">skills.exe</div>
-    </div>
-    <div class="icon" onclick="openWin('w-resume')">
-      <div class="ico">📄</div><div class="lbl">resume.exe</div>
-    </div>
-    <div class="icon" onclick="openWin('w-contact')">
-      <div class="ico">📡</div><div class="lbl">contact.exe</div>
-    </div>
+  <div class="icon" onclick="openWin('w-about')">
+    <div class="ico" style="--icon-url: url('https://unpkg.com/pixelarticons@latest/svg/user.svg')"></div>
+    <div class="lbl">about.exe</div>
   </div>
+  <div class="icon" onclick="openWin('w-projects'); loadProjects()">
+    <div class="ico" style="--icon-url: url('https://unpkg.com/pixelarticons@latest/svg/folder.svg')"></div>
+    <div class="lbl">projects.exe</div>
+  </div>
+  <div class="icon" onclick="openWin('w-skills')">
+    <div class="ico" style="--icon-url: url('https://unpkg.com/pixelarticons@latest/svg/sliders.svg')"></div>
+    <div class="lbl">skills.exe</div>
+  </div>
+  <div class="icon" onclick="openWin('w-resume')">
+    <div class="ico" style="--icon-url: url('https://unpkg.com/pixelarticons@latest/svg/file.svg')"></div>
+    <div class="lbl">resume.exe</div>
+  </div>
+  <div class="icon" onclick="openWin('w-contact')">
+    <div class="ico" style="--icon-url: url('https://unpkg.com/pixelarticons@latest/svg/rss.svg')"></div>
+    <div class="lbl">contact.exe</div>
+  </div>
+</div>
 
+  
 
   <div id="widgets">
     <div class="widget">
@@ -385,9 +462,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
     <div class="widget">
       <div class="widget-title">SYS_INFO</div>
       <div id="sysinfo">
-        USER: <span id="si-alias"></span><br>
-        ROLE: <span id="si-role"></span><br>
-        OS:&nbsp;&nbsp;ORANGE_WM 2.1<br>
+        THEME:&nbsp;&nbsp;ORANGE_WM 2.1<br>
         UP:&nbsp;&nbsp;<span id="si-up">00:00:00</span>
       </div>
     </div>
@@ -395,7 +470,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 
   <div class="win" id="w-about" style="top:60px;left:110px;width:380px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-about')">
-      <span>📄 about.exe</span>
+      <span>about.exe</span>
       <div class="win-bar-btns">
         <button class="wbtn" onclick="minimiseWin('w-about')">─</button>
         <button class="wbtn close" onclick="closeWin('w-about')">✕</button>
@@ -408,7 +483,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 
   <div class="win" id="w-projects" style="top:50px;left:200px;width:440px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-projects')">
-      <span>📁 projects.exe — [live GitHub]</span>
+      <span>live_projects.exe</span>
       <div class="win-bar-btns">
         <button class="wbtn" onclick="minimiseWin('w-projects')">─</button>
         <button class="wbtn close" onclick="closeWin('w-projects')">✕</button>
@@ -424,7 +499,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
  
   <div class="win" id="w-skills" style="top:80px;left:160px;width:360px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-skills')">
-      <span>⚙️ skills.exe</span>
+      <span>skills.exe</span>
       <div class="win-bar-btns">
         <button class="wbtn" onclick="minimiseWin('w-skills')">─</button>
         <button class="wbtn close" onclick="closeWin('w-skills')">✕</button>
@@ -437,7 +512,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
   
   <div class="win" id="w-resume" style="top:70px;left:180px;width:400px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-resume')">
-      <span>📄 resume.exe</span>
+      <span>resume.exe</span>
       <div class="win-bar-btns">
         <button class="wbtn" onclick="minimiseWin('w-resume')">─</button>
         <button class="wbtn close" onclick="closeWin('w-resume')">✕</button>
@@ -450,7 +525,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
   
   <div class="win" id="w-contact" style="top:90px;left:170px;width:360px;">
     <div class="win-bar" onmousedown="dragStart(event,'w-contact')">
-      <span>📡 contact.exe</span>
+      <span>contact.exe</span>
       <div class="win-bar-btns">
         <button class="wbtn" onclick="minimiseWin('w-contact')">─</button>
         <button class="wbtn close" onclick="closeWin('w-contact')">✕</button>
@@ -462,10 +537,10 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 
 </div>
 
-<!-- ══ TASKBAR ════════════════════════════════════════════════════════ -->
+
 <div id="taskbar">
   <div id="tb-brand">
-    created by <a id="tb-ghlink" href="" target="_blank"></a>
+    created by <a id="tb-ghlink" href="" target="_blank"> All Rights Reserved.</a>
   </div>
   <div id="tb-open"></div>
   <div id="tb-right">
@@ -476,7 +551,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
   </div>
 </div>
 
-<!-- ══ SCRIPT ════════════════════════════════════════════════════════ -->
+
 <script>
 
 (function init() {
@@ -583,7 +658,7 @@ function buildContact() {
   `;
 }
 
-// ── 3. BOOT SEQUENCE ─────────────────────────────────────────────────
+
 async function runBoot() {
   const log  = document.getElementById('boot-log');
   const fill = document.getElementById('boot-fill');
@@ -607,7 +682,7 @@ async function runBoot() {
 }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// ── 4. MATRIX RAIN ───────────────────────────────────────────────────
+
 function startMatrix() {
   const canvas = document.getElementById('matrix');
   const ctx    = canvas.getContext('2d');
@@ -644,7 +719,7 @@ function startMatrix() {
   }, cfg.speed);
 }
 
-// ── 5. ANALOG CLOCK ──────────────────────────────────────────────────
+
 function drawClock() {
   const c = document.getElementById('clock-canvas');
   const ctx = c.getContext('2d');
@@ -653,11 +728,11 @@ function drawClock() {
   const hr = now.getHours() % 12, mn = now.getMinutes(), sc = now.getSeconds();
 
   ctx.clearRect(0, 0, W, H);
-  // Face
+  
   ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
   ctx.fillStyle = 'rgba(10,7,0,0.96)'; ctx.fill();
   ctx.strokeStyle = CONFIG.colors.accentDim; ctx.lineWidth = 1.5; ctx.stroke();
-  // Ticks
+  
   for (let i = 0; i < 12; i++) {
     const a = (i/12)*Math.PI*2, major = i%3===0;
     ctx.beginPath();
@@ -666,7 +741,7 @@ function drawClock() {
     ctx.strokeStyle = major ? CONFIG.colors.accent : '#3a1800';
     ctx.lineWidth = major ? 2 : 1; ctx.stroke();
   }
-  // Hands
+  
   const hand = (angle, len, w, col) => {
     ctx.beginPath(); ctx.moveTo(cx, cy);
     ctx.lineTo(cx+Math.cos(angle)*len, cy+Math.sin(angle)*len);
@@ -679,7 +754,7 @@ function drawClock() {
   ctx.fillStyle = CONFIG.colors.accent; ctx.fill();
 }
 
-// ── 6. TASKBAR CLOCK + UPTIME ────────────────────────────────────────
+
 const bootTime = Date.now();
 function startClock() {
   const tick = () => {
@@ -694,12 +769,57 @@ function startClock() {
   tick(); setInterval(tick, 1000);
 }
 
-// ── 7. WEATHER ───────────────────────────────────────────────────────
+
 const WX_ICONS = {'0':'☀️','1':'🌤','2':'⛅','3':'☁️','45':'🌫','48':'🌫','51':'🌦','61':'🌧','71':'🌨','80':'🌦','95':'⛈','99':'⛈'};
-async function loadWeather() {
-  const w = CONFIG.weather;
+async function resolveLocation() {
+  if (navigator.geolocation) {
+    try {
+      const pos = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject, {
+          timeout: 5000,
+          maximumAge: 600000
+        });
+      });
+      return {
+        real: true,
+        lat: pos.coords.latitude,
+        lon: pos.coords.longitude,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      };
+    } catch (e) {
+      return { real: false };
+    }
+  }
+  return { real: false };
+}
+
+async function reverseGeocode(lat, lon) {
   try {
-    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${w.lat}&longitude=${w.lon}&current=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min&timezone=${w.timezone}&forecast_days=1`);
+    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`);
+    const d = await res.json();
+    return d.address.city || d.address.town || d.address.village || 'Your location';
+  } catch (e) {
+    return 'Your location';
+  }
+}
+
+async function loadWeather() {
+  const loc = await resolveLocation();
+
+  if (!loc.real) {
+    const fake = getCosmicFallbackWeather();
+    document.getElementById('weather-main').innerHTML = `
+      <div id="w-icon">${fake.icon}</div>
+      <div id="w-temp">${fake.temp}<span id="w-unit">°C</span></div>
+      <div id="w-hi-lo">H:${fake.hi}° / L:${fake.lo}°</div>
+      <div id="w-city">${fake.city}</div>
+    `;
+    return;
+  }
+
+  const city = await reverseGeocode(loc.lat, loc.lon);
+  try {
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min&timezone=${loc.timezone}&forecast_days=1`);
     const d = await res.json();
     const temp = Math.round(d.current.temperature_2m);
     const code = String(d.current.weathercode);
@@ -709,18 +829,53 @@ async function loadWeather() {
       <div id="w-icon">${WX_ICONS[code]||'🌡'}</div>
       <div id="w-temp">${temp}<span id="w-unit">°C</span></div>
       <div id="w-hi-lo">H:${hi}° / L:${lo}°</div>
-      <div id="w-city">${w.city}</div>
+      <div id="w-city">${city}</div>
     `;
   } catch(e) {
-    document.getElementById('weather-main').innerHTML = '<div id="w-loading" style="color:var(--dim)">Offline</div>';
+    const fake = getCosmicFallbackWeather();
+    document.getElementById('weather-main').innerHTML = `
+      <div id="w-icon">${fake.icon}</div>
+      <div id="w-temp">${fake.temp}<span id="w-unit">°C</span></div>
+      <div id="w-hi-lo">H:${fake.hi}° / L:${fake.lo}°</div>
+      <div id="w-city">${fake.city}</div>
+    `;
   }
 }
 
-// ── 8. DONUT IIFE so its vars don't pollute global scope ────────────
+const COSMIC_FALLBACK_PLANETS = [
+  { name: 'Kepler-442b', tempRange: [-40, 15] },
+  { name: 'Proxima Centauri b', tempRange: [-90, 30] },
+  { name: 'TRAPPIST-1e', tempRange: [-60, 20] },
+  { name: 'Gliese 581g', tempRange: [-30, 40] },
+  { name: 'HD 40307g', tempRange: [-70, 10] },
+  { name: 'Mars', tempRange: [-125, -20] },
+  { name: 'Titan', tempRange: [-180, -170] },
+  { name: 'Kepler-186f', tempRange: [-85, 5] },
+];
+
+function randomBetween(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getCosmicFallbackWeather() {
+  const planet = COSMIC_FALLBACK_PLANETS[Math.floor(Math.random() * COSMIC_FALLBACK_PLANETS.length)];
+  const lat = randomBetween(-90, 90);
+  const lon = randomBetween(-180, 180);
+  const temp = Math.round(randomBetween(planet.tempRange[0], planet.tempRange[1]));
+  const hi = temp + Math.round(randomBetween(1, 5));
+  const lo = temp - Math.round(randomBetween(1, 5));
+  const icons = ['☀️','🌤','⛅','☁️','🌫','🌦','🌧','🌨','⛈','🌌','☄️'];
+  const icon = icons[Math.floor(Math.random() * icons.length)];
+  return {
+    city: `${planet.name} (${lat.toFixed(2)}°, ${lon.toFixed(2)}°)`,
+    icon, temp, hi, lo
+  };
+}
+
 (function setupDonut() {
   const cfg = CONFIG.donut;
   const R1=1, R2=2, K2=5, SW=cfg.cols, SH=cfg.rows;
-  const K1  = SW*K2*2/(8*(R1+R2));  // was *3 — reduced so donut sits smaller than its grid
+  const K1  = SW*K2*2/(8*(R1+R2));  
   const CHR = cfg.chars;
   let dA=1.57, dB=0, playing=true, raf;
 
@@ -764,10 +919,10 @@ async function loadWeather() {
     if(playing) frame(); else cancelAnimationFrame(raf);
   });
 
-  window._donutStart = frame;  // called by startAll()
+  window._donutStart = frame;  
 })();
 
-// ── 9. GITHUB PROJECTS ───────────────────────────────────────────────
+
 let projectsLoaded = false;
 async function loadProjects() {
   if (projectsLoaded) return;
@@ -791,7 +946,7 @@ async function loadProjects() {
   }
 }
 
-// ── 10. WINDOW MANAGER ───────────────────────────────────────────────
+
 let zTop=200;
 const minimised={};
 
@@ -829,7 +984,7 @@ function updateTaskbar() {
   });
 }
 
-// ── 11. DRAG ─────────────────────────────────────────────────────────
+
 let drag=null,dragOX,dragOY;
 function dragStart(e,id){
   drag=document.getElementById(id);
@@ -845,7 +1000,7 @@ document.addEventListener('mousemove',e=>{
 });
 document.addEventListener('mouseup',()=>drag=null);
 
-// ── 12. RESIZE ───────────────────────────────────────────────────────
+
 let rsEl=null,rsX,rsY,rsW,rsH;
 function resizeStart(e,id){
   rsEl=document.getElementById(id);
@@ -862,7 +1017,7 @@ document.addEventListener('mousemove',e=>{
 });
 document.addEventListener('mouseup',()=>rsEl=null);
 
-// ── 13. DESKTOP CLICK DEFOCUS ────────────────────────────────────────
+
 document.getElementById('desktop').addEventListener('mousedown',e=>{
   if(e.target.id==='desktop'){
     document.querySelectorAll('.win').forEach(w=>w.classList.remove('focused'));
@@ -870,7 +1025,7 @@ document.getElementById('desktop').addEventListener('mousedown',e=>{
   }
 });
 
-// ── 14. KICK OFF ─────────────────────────────────────────────────────
+
 function startAll(){
   startMatrix();
   startClock();
