@@ -618,7 +618,7 @@ function buildSkills() {
     html += tags.map(t => `<span class="tag">${t}</span>`).join('');
     html += '<br>';
   }
-  html += `<br><div class="dim-t">[edit: CONFIG.skills in index.html]</div>`;
+  html += `<br><div class="dim-t">[LOAD FROM Ego.db]</div>`;
   document.getElementById('wb-skills').innerHTML = html;
 }
 
@@ -641,8 +641,8 @@ function buildResume() {
     ${card(CONFIG.resumeUrl, `Resume_${CONFIG.alias}.pdf`, '1-page resume — ATS keyword optimised')}
     ${card(CONFIG.cvUrl,     `CV_${CONFIG.alias}.pdf`,     'Full CV — projects, contributions & detail')}
     <div class="w-section">&gt; ATS.NOTE</div>
-    <div class="dim-t">Resume targets ATS keyword scanners (Workday, Greenhouse).</div>
-    <div class="dim-t">CV for direct/recruiter submissions with full context.</div>
+    <div class="dim-t"></div>
+    <div class="dim-t"></div>
   `;
 }
 
