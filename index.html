@@ -288,27 +288,28 @@ html, body { width: 100%; height: 100%; overflow: hidden; font-family: var(--fon
 .icon .ico   { font-size: 26px; line-height: 1; }
 .icon .lbl   { font-size: 9px; color: #ffe8cc; text-align: center; text-shadow: 0 0 8px #000; word-break: break-word; }
 
-/* 
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ .ico {                                                                                                             │
-  │   width: 26px;                                                                                                     │
-  │   height: 26px;                                                                                                    │
-  │   margin: 0 auto;                                                                                                  │
-  │   background-color: var(--or);                                                                                     │
-  │   -webkit-mask-image: var(--icon-url);                                                                             │
-  │   mask-image: var(--icon-url);                                                                                     │
-  │   -webkit-mask-size: contain;                                                                                      │
-  │   mask-size: contain;                                                                                              │
-  │   -webkit-mask-repeat: no-repeat;                                                                                  │
-  │   mask-repeat: no-repeat;                                                                                          │
-  │   -webkit-mask-position: center;                                                                                   │
-  │   mask-position: center;                                                                                           │
-  │   image-rendering: pixelated;                                                                                      │
-  │ }                                                                                                                  │
-  │ .icon:hover .ico { background-color: var(--green, #39ff14); }                                                      │
-  │                                                                                                                    │
-  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
- */
+
+
+   .ico  {                                                                                                             
+     width: 26px;                                                                                                     
+     height: 26px;                                                                                                    
+     margin: 0 auto;                                                                                                  
+     background-color: var(--or);                                                                                     
+     -webkit-mask-image: var(--icon-url);                                                                             
+     mask-image: var(--icon-url);                                                                                     
+    -webkit-mask-size: contain;                                                                                      
+     mask-size: contain;                                                                                              
+     -webkit-mask-repeat: no-repeat;                                                                                  
+     mask-repeat: no-repeat;                                                                                          
+     -webkit-mask-position: center;                                                                                   
+     mask-position: center;                                                                                           
+     image-rendering: pixelated;                                                                                      
+   }  
+                                                                                                                   
+   .icon:hover .ico { background-color: var(--green, #39ff14); }                                                      
+                                                                                                                      
+ 
+
 
 
 
@@ -540,7 +541,7 @@ a.ol:hover { color: #fff; border-bottom-color: var(--or); }
 
 <div id="taskbar">
   <div id="tb-brand">
-    created by <a id="tb-ghlink" href="" target="_blank"> All Rights Reserved.</a>
+    created by <a id="tb-ghlink" href="" target="_blank"></a>All Rights Reserved.
   </div>
   <div id="tb-open"></div>
   <div id="tb-right">
