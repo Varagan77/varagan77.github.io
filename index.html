@@ -108,7 +108,7 @@ const CONFIG = {
 
 /* 
   ┌─────────────────────────────────────────────────────────────────────────────┐
-  │   DONUT                         (o)                                         │
+  │   DONUT                         ((o))                                         │
   └─────────────────────────────────────────────────────────────────────────────┘
  */
   donut: {
@@ -866,8 +866,22 @@ function startClock() {
   tick(); setInterval(tick, 1000);
 }
 
+const WX_ICON_BASE = 'https://unpkg.com/pixelarticons@latest/svg/';
+const WX_ICONS = {
+  '0':  'sun.svg',
+  '1':  'cloud-sun.svg',
+  '2':  'cloud-sun.svg',
+  '3':  'cloud.svg',
+  '45': 'cloud.svg',
+  '48': 'cloud.svg',
+  '51': 'rain-2.svg',
+  '61': 'rain-2.svg',
+  '71': 'rain-2.svg',
+  '80': 'rain-2.svg',
+  '95': 'cloud-thunder-rain.svg',
+  '99': 'cloud-thunder-rain.svg'
+};
 
-const WX_ICONS = {'0':'☀️','1':'🌤','2':'⛅','3':'☁️','45':'🌫','48':'🌫','51':'🌦','61':'🌧','71':'🌨','80':'🌦','95':'⛈','99':'⛈'};
 async function resolveLocation() {
   if (navigator.geolocation) {
     try {
@@ -923,10 +937,15 @@ async function loadWeather() {
     const hi = Math.round(d.daily.temperature_2m_max[0]);
     const lo = Math.round(d.daily.temperature_2m_min[0]);
     document.getElementById('weather-main').innerHTML = `
-      <div id="w-icon">${WX_ICONS[code]||'🌡'}</div>
-      <div id="w-temp">${temp}<span id="w-unit">°C</span></div>
-      <div id="w-hi-lo">H:${hi}° / L:${lo}°</div>
-      <div id="w-city">${city}</div>
+     <div id="w-icon">
+    <div
+      class="weather-ico"
+      style="--icon-url: url('${WX_ICON_BASE}${WX_ICONS[code] || 'cloud.svg'}')">
+    </div>
+  </div>
+  <div id="w-temp">${temp}<span id="w-unit">°C</span></div>
+  <div id="w-hi-lo">H:${hi}° / L:${lo}°</div>
+  <div id="w-city">${city}</div>
     `;
   } catch(e) {
     const fake = getCosmicFallbackWeather();
